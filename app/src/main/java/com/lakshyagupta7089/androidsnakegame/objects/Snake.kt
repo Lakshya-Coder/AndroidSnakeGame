@@ -86,11 +86,11 @@ class Snake(
             snakeX = screenWidth - snakeScale
         }
 
-        if (snakeX > screenWidth - snakeScale) {
+        if (snakeX > screenWidth) {
             snakeX = 0f
         }
 
-        if (snakeY > screenHeight - snakeScale) {
+        if (snakeY > screenHeight) {
             snakeY = 0f
         }
 
