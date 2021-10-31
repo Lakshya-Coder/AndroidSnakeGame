@@ -66,21 +66,17 @@ class MainActivity : AppCompatActivity(), SnakeStatusUpdate {
     override fun onFoodEaten(total: Int) {
         binding.scoreNumTextView.text = (total - 3).toString()
         if (!isVolumeOn) return
-        soundPool.play(
-            bouns,
-            1f,
-            1f,
-            0,
-            0,
-            1f
-        )
+        playSound(bouns)
     }
 
     override fun onGameOver(total: Int) {
         if (!isVolumeOn) return
+        playSound(gameOver)
+    }
 
+    private fun playSound(id: Int) {
         soundPool.play(
-            gameOver,
+            id,
             1f,
             1f,
             0,
@@ -88,4 +84,12 @@ class MainActivity : AppCompatActivity(), SnakeStatusUpdate {
             1f
         )
     }
+
+    override fun onStop() {
+        super.onStop()
+
+        soundPool.release()
+    }
+
+
 }

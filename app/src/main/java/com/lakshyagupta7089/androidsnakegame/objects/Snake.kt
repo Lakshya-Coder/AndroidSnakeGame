@@ -49,20 +49,16 @@ class Snake(
         tail.add(SnakeBlock(0f, 0f))
     }
 
-    fun setSnakeStatusUpdateListener(snakeStatusUpdate: SnakeStatusUpdate) {
-        this.snakeStatusUpdate = snakeStatusUpdate
-    }
-
     private fun getFood() {
         val columns = (screenWidth - (2 * snakeScale)) / snakeScale
         val row = (screenHeight - (2 * snakeScale)) / snakeScale
 
         val foodX = ceil((snakeScale * (0..columns.toInt()).random()).toDouble())
         val foodY = ceil((snakeScale * (0..row.toInt()).random()).toDouble())
-        food = Food(foodX.toFloat(), foodY.toFloat(), snakeScale, context, resources)
+        food = Food(foodX.toFloat(), foodY.toFloat(), snakeScale, context)
     }
 
-    fun setDirection(xDir: Int, yDir: Int) {
+    private fun setDirection(xDir: Int, yDir: Int) {
         xSpeed = xDir
         ySpeed = yDir
     }
@@ -84,22 +80,18 @@ class Snake(
         snakeY += ySpeed * snakeScale
 
         if (snakeY < 0) {
-//            snakeY = 0f
             snakeY = screenHeight - snakeScale
         }
 
         if (snakeX < 0) {
-//            snakeX = 0f
             snakeX = screenWidth - snakeScale
         }
 
         if (snakeX > screenWidth - snakeScale) {
-//            snakeX = screenWidth - snakeScale
             snakeX = 0f
         }
 
         if (snakeY > screenHeight - snakeScale) {
-//            snakeY = screenHeight - snakeScale
             snakeY = 0f
         }
 
@@ -156,8 +148,6 @@ class Snake(
         )
 
         food?.show(canvas)
-
-//        canvas.drawBitmap(bitmaps?.get(index)!!, snakeX, snakeY, snakePaint)
     }
 
     override fun onSwipeRight() {
@@ -180,9 +170,13 @@ class Snake(
         setDirection(0, 1)
     }
 
-    inner class SnakeBlock(
+    fun setSnakeStatusUpdateListener(snakeStatusUpdate: SnakeStatusUpdate) {
+        this.snakeStatusUpdate = snakeStatusUpdate
+    }
+
+    data class SnakeBlock(
         val x: Float = 0f,
         val y: Float = 0f
-    ) {
-    }
+    )
+
 }
