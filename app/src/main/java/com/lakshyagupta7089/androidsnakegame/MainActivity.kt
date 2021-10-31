@@ -1,7 +1,9 @@
 package com.lakshyagupta7089.androidsnakegame
 
+import android.content.DialogInterface
 import android.media.SoundPool
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.lakshyagupta7089.androidsnakegame.databinding.ActivityMainBinding
 import java.util.*
@@ -70,6 +72,16 @@ class MainActivity : AppCompatActivity(), SnakeStatusUpdate {
     }
 
     override fun onGameOver(total: Int) {
+        AlertDialog.Builder(this)
+            .setTitle("Are you want to reset the game?")
+            .setPositiveButton("Yes"
+            ) { dialog, _ ->
+                dialog.dismiss()
+                binding.game.restart()
+            }
+            .setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }.show()
         if (!isVolumeOn) return
         playSound(gameOver)
     }
@@ -84,12 +96,4 @@ class MainActivity : AppCompatActivity(), SnakeStatusUpdate {
             1f
         )
     }
-
-    override fun onStop() {
-        super.onStop()
-
-        soundPool.release()
-    }
-
-
 }
