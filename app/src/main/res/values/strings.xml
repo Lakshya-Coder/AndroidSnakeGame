@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidSnakeGame</string>
+    <string name="_0">0</string>
+    <string name="score_text">"Score: "</string>
+</resources>
