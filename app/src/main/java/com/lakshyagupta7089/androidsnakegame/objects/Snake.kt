@@ -15,8 +15,7 @@ import kotlin.math.sqrt
 class Snake(
     private val screenWidth: Int,
     private val screenHeight: Int,
-    private val context: Context,
-    private val resources: Resources
+    private val context: Context
 ) : Callback {
     private val snakeScale = 100f
     private var snakeX = 0f

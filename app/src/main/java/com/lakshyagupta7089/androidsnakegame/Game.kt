@@ -71,7 +71,7 @@ class Game : View {
     }
 
     fun restart() {
-        snake = Snake(screenWidth, screenHeight, context, resources)
+        snake = Snake(screenWidth, screenHeight, context)
         snake!!.setSnakeStatusUpdateListener(snakeStatusUpdate!!)
         this.setOnTouchListener(OnSwipeTouchListener(context, snake!!))
     }
