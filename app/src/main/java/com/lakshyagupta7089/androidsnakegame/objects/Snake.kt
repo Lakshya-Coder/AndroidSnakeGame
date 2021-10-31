@@ -78,11 +78,11 @@ class Snake(
         snakeX += xSpeed * snakeScale
         snakeY += ySpeed * snakeScale
 
-        if (snakeY < 0) {
+        if (snakeY < -80) {
             snakeY = screenHeight - snakeScale
         }
 
-        if (snakeX < 0) {
+        if (snakeX < -80) {
             snakeX = screenWidth - snakeScale
         }
 
