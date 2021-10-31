@@ -6,7 +6,10 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/background_gradient.xml" value="0.25625" />
         <entry key="app/src/main/res/drawable/bg_actionbar.xml" value="0.18796296296296297" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1675925925925926" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1675925925925926" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18796296296296297" />
       </map>
     </option>
   </component>
