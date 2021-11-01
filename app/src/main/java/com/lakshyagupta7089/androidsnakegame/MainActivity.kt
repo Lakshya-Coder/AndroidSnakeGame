@@ -11,7 +11,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity(), SnakeStatusUpdate {
     companion object {
-        const val FPS = 5
+        const val FPS = 7
     }
 
     private lateinit var binding: ActivityMainBinding
